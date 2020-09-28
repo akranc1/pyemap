@@ -2,8 +2,8 @@ import pyemap
 import numpy as np
 import networkx as nx
 import time
-cryptochrome_ids= ["3ZXS","1u3d","1u3c","6PU0","4I6G","2J4D","6LZ3","4GU5",
-                   "6PTZ","6FN2","1np7","5zm0","6FN3","6lz3"]
+cryptochrome_ids= ["1u3d","1u3c","6PU0","4I6G","2J4D","6LZ3","4GU5",
+                   "6PTZ","6FN2","1np7","6FN3","6lz3"]
 photolyase_ids = [ "1IQR","4U63","6KII","3FY4","1DNP","1QNF","1IQU"]
 flavoprotein_ids=["6RKF","1o96","1efp","1o97","1efp"]
 protein_ids = cryptochrome_ids + photolyase_ids + flavoprotein_ids
@@ -16,6 +16,7 @@ protein_ids = cryptochrome_ids + photolyase_ids + flavoprotein_ids
 # 6fn0: buggy case
 # 1tez: buggy case
 # 2ijg: buggy case
+# 3ZXS,5zm0
 
 #buried labels, other is 7
 res_labels_bur = { "W": 2,
