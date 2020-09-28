@@ -1,0 +1,12 @@
+# How to run gspan analysis:
+
+1. install the python package
+    >>> pip install gspan-mining
+2. Generate the graphs and save to graphdata.txt
+    >>> python generate_graphs.py
+3. Run gspan
+    >>> python run_gspan.py > gspan_results.out
+4. Prune the results and grab only the pathways containing FAD
+    >>> python prune_gspan.py
+5. Visualize the graphs and save to file
+    >>> python visualize_graphs.py
