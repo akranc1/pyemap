@@ -26,14 +26,22 @@ while line_idx < len(lines):
     if len(line.split())==3 and line.split()[0]=="t" and line.split()[1]=="#":
         start_idx = line_idx
         contains_FAD = False
+        other_res = False
+        num_Ws = 0
+        num_FADs = 0
         line_idx+=1
         line = lines[line_idx]
         while "---" not in line:
             if len(line.split())==3 and line.split()[0]=="v" and (line.split()[2]=="6" or line.split()[2]=="12"):
                 contains_FAD = True
+                num_FADs+=1
+            elif len(line.split())==3 and line.split()[0]=="v" and (line.split()[2]=="2" or line.split()[2]=="8"):
+                num_Ws+=1
+            elif len(line.split())==3 and line.split()[0]=="v":
+                other_res = True
             line_idx+=1
             line = lines[line_idx]
-        if contains_FAD:
+        if contains_FAD and num_Ws>=3 and num_FADs==2 and not other_res and (num_Ws+num_FADs)<=6:
             count+=1
             for i in range(start_idx,line_idx+1):
                 f_out.write(lines[i])
