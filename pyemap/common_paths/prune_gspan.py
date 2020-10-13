@@ -1,11 +1,11 @@
 import numpy as np
 import networkx as nx
 
-cryptochrome_ids= ["3ZXS","1u3d","1u3c","6PU0","4I6G","2J4D","6LZ3","4GU5",
-                   "6PTZ","6FN2","1np7","5zm0","6FN3","6lz3"]
-photolyase_ids = [ "1IQR","4U63","6KII","3FY4","1DNP","1QNF","1IQU"]
-flavoprotein_ids=["6RKF","1o96","1efp","1o97","1efp"]
+cryptochrome_ids= ["1u3d","1u3c","6PU0","4I6G","2J4D","6LZ3","4GU5","6FN2","6FN3","1np7","3ZXS"]
+flavoprotein_ids=["6RKF","1o96","1efp","1o97","1x0p","2z6c","1g28","4eer","2iyg","4xnb"]
+photolyase_ids = [ "1IQR","4U63","6KII","3FY4","1DNP","1QNF","1IQU","2wb2","1tez"]
 protein_ids = cryptochrome_ids + photolyase_ids + flavoprotein_ids
+
 
 res_labels = { "2":"W",
     "3":"Y",
@@ -41,7 +41,7 @@ while line_idx < len(lines):
                 other_res = True
             line_idx+=1
             line = lines[line_idx]
-        if contains_FAD and num_Ws>=3 and num_FADs==2 and not other_res and (num_Ws+num_FADs)<=6:
+        if contains_FAD and num_Ws>=3 and num_FADs==1 and not other_res and (num_Ws+num_FADs)<=5:
             count+=1
             for i in range(start_idx,line_idx+1):
                 f_out.write(lines[i])
